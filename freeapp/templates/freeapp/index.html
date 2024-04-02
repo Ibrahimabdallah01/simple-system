@@ -1,0 +1,25 @@
+{% extends 'freeapp/base.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freedom</title>
+  </head>
+  <body>
+    <br />
+    <br />
+    <div class="text-center">
+      <h3>Project....management at it's finest</h3>
+      <br />
+      <h5>Keep track of your records effectively!</h5>
+      <hr />
+      <br />
+      <a href="{% url 'register' %}" class="btn btn-primary" type="button"
+        >Create Your Account &nbsp;
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
+      </a>
+    </div>
+  </body>
+</html>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'freeapp/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+  </head>
+  <body>
+    {% load crispy_forms_tags %} {% block content %}
+
+    <div class="container bg-light shodow-md p-5 form-layout">
+      <h3>Create your Account</h3>
+
+      <h5>Starting managing your client today</h5>
+      <hr />
+      <br />
+
+      <form method="post" autocomplete="off">
+        {% csrf_token %} {{form | crispy}}
+        <br />
+        <button type="submit" class="btn-btn-primary w-100 btn-block p-2">
+          Create Account &nbsp; <i class="fa fa-user" aria-hidden="true"></i>
+        </button>
+      </form>
+      <br />
+      <div class="text-center">
+        <p>Already have a Account</p>
+        <a href="{% url 'my-login' %}"> Login</a>
+      </div>
+    </div>
+
+    {% endblock content %}
+  </body>
+</html>

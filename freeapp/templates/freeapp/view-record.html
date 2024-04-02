@@ -1,0 +1,53 @@
+{% extends 'freeapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view-record</title>
+</head>
+<body>
+    {% load crispy_forms_tags %}
+    
+    {% block content %}
+        <div class="card">
+
+           <strong>
+            <br>
+
+            &nbsp; &nbsp;
+
+            {{record.first_name | upper}}
+           </strong>
+           <hr>  
+
+            <div class="card-body">
+                <p> <strong> ID: </strong> {{record.id}} </p>
+                <p> <strong> email: </strong> {{record.email}} </p>
+                <p> <strong> phone number: </strong> {{record.phone}} </p>
+                <p> <strong> full name: </strong> {{record.first_name}} {{record.last_name}}</p>
+                <p> <strong> city: </strong> {{record.city}} </p>
+                <p> <strong> country: </strong> {{record.country}} </p>
+                <p> <strong> address: </strong> {{record.address}} </p>
+                <p> <strong> province: </strong> {{record.province}} </p>
+            </div>
+        </div>
+        <br>
+
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Return</a>
+
+        &nbsp;
+
+        <a href="{% url 'update-record' record.id %}" class="btn btn-info">Update-record</a>
+
+        &nbsp;
+
+        <a href="{% url 'delete-record' record.id %}" class="btn btn-danger">Delete</a>
+
+    {% endblock content %}
+        
+</body>
+</html>

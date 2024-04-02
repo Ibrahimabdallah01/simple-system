@@ -1,0 +1,36 @@
+{% extends 'freeapp/base.html' %} {% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create-record</title>
+  </head>
+  <body>
+    {% load crispy_forms_tags %} {% block content %}
+    <div class="container bg-light shodow-md p-5 form-layout">
+      <h3>Create Record</h3>
+
+      <h5>Starting adding in the required details for your records.</h5>
+      <hr />
+      <br />
+
+      <form method="POST" autocomplete="off">
+        {% csrf_token %} {{form|crispy}}
+        <br />
+        <button type="submit" class="btn-btn-primary">
+          Create Record &nbsp;
+          <i class="fa fa-check-circle" aria-hidden="true"></i>
+        </button>
+
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Return &nbsp; 
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
+
+      </form>
+    </div>
+    <br>
+    {% endblock content %}
+  </body>
+</html>
